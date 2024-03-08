@@ -34,7 +34,7 @@ function closeSlideInPage() {
 
 async function getsongs(folder) {      //i.e getsongs function will take folder name as parameter so as to 
     currfolder = folder;
-    let a = await fetch(`http://127.0.0.1:5500/84SpotifyClone/${folder}/`)   //here we removedthe /songs by /${folder} becoz directly we want to create dynamic folders  which are related to the cards.
+    let a = await fetch(`http://127.0.0.1:5500/${folder}/`)   //here we removedthe /songs by /${folder} becoz directly we want to create dynamic folders  which are related to the cards.
     let response = await a.text();
     // console.log(response);
 
