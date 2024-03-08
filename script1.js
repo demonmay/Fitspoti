@@ -137,7 +137,7 @@ async function main() {
 
 
     // to get the list of all song
-    await getsongs("songs/hits);
+    await getsongs("songs/hits");
     console.log(songs);   //it will give all the songs one by one on the console
     playmusic(songs[0], true)
 
