@@ -110,7 +110,7 @@ const playmusic = (track, pause = false) => {
     // let audio = new Audio("/84SpotifyClone/songs/" + track);
     // audio.play();
 
-    currentsong.src = `/songs/${currfolder}/` + track;
+    currentsong.src = `/${currfolder}/` + track;
     if (!pause) {
         currentsong.play();
         play.src = "pause.svg"
