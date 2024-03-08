@@ -146,8 +146,19 @@ async function main() {
 
     // attach an event listener on play,previous,next
     play.addEventListener("click", element => {
+        // currentsong.src = `/songs/${currfolder}/` + track;
         if (currentsong.paused) {
-            currentsong.play();
+            var playPromise = currentsong.play();
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Automatic playback started!
+                    // Show playing UI.
+                })
+                    .catch(error => {
+                        // Auto-play was prevented
+                        // Show paused UI.
+                    });
+            }
             play.src = "pause.svg"
         }
         else {
