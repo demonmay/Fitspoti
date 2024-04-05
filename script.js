@@ -58,7 +58,7 @@ function closesignuppage() {
 
 async function getsongs(folder) {      //i.e getsongs function will take folder name as parameter so as to 
     currfolder = folder;
-    let a = await fetch(`/${folder}/`)   //here we removedthe /songs by /${folder} becoz directly we want to create dynamic folders  which are related to the cards.
+    let a = await fetch(`/songs/${folder}/`)   //here we removedthe /songs by /${folder} becoz directly we want to create dynamic folders  which are related to the cards.
     let response = await a.text();
     // console.log(response);
 
@@ -133,7 +133,7 @@ const playmusic = (track,pause=false) => {
     // let audio = new Audio("/84SpotifyClone/songs/" + track);
     // audio.play();
 
-    currentsong.src = `/${currfolder}/` + track;
+    currentsong.src = `/songs/${currfolder}/` + track;
     if(!pause){
         currentsong.play();
         play.src="pause.svg"
