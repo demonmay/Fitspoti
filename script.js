@@ -60,7 +60,7 @@ async function getsongs(folder) {      //i.e getsongs function will take folder 
     currfolder = folder;
     let a = await fetch(`/${folder}/`)   //here we removedthe /songs by /${folder} becoz directly we want to create dynamic folders  which are related to the cards.
     let response = await a.text();
-    // console.log(response);
+    console.log(response);
 
     let div = document.createElement("div")
     div.innerHTML = response;
