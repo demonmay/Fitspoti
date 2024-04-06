@@ -133,9 +133,21 @@ const playmusic = (track,pause=false) => {
     // let audio = new Audio("/84SpotifyClone/songs/" + track);
     // audio.play();
 
+    
+    
     currentsong.src = `/${currfolder}/` + track;
     if(!pause){
-        currentsong.play();
+        var playPromise = currentsong.play();
+ 
+        if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          video.pause();
+        })
+        .catch(error => {
+      
+        });
+        
+        
         play.src="pause.svg"
     }
     // currentsong.play();
