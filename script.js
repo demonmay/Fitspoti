@@ -136,20 +136,11 @@ const playmusic = (track,pause=false) => {
     
     
     currentsong.src = `/${currfolder}/` + track;
-    if(!pause){
-        var playPromise = currentsong.play();
- 
-        if (playPromise !== undefined) {
-        playPromise.then(_ => {
-          video.pause();
-        })
-        .catch(error => {
-      
-        });
+    
         
-        
+        currentsong.play();
         play.src="pause.svg"
-    }
+    
     // currentsong.play();
     // play.src = "pause.svg"
     // sometimes it may happen that on showing the song name on the playbar %20 will come at the place of spaces so to remove that %20 we need to decode the URI and for that we do decodeURI(track) below.This happend when we use the if condition above to make the first song to play as the default song on refreshing
